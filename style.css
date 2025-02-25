@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img, svg {
+    display: block;
+    max-width: 100%;
+  }
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Outfit", serif;
+    background-color: hsl(217, 54%, 11%);
+    height: 100vh;
+}
+
+.prod-card {
+    width: 300px;
+    background-color: hsl(216, 50%, 16%);
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+    overflow: hidden;
+}
+
+.prod-img img {
+    border-radius: .5rem;
+}
+
+.prod-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 1rem 0;
+    color: hsl(0, 0%, 100%);
+}
+
+.prod-desc {
+    margin-bottom: 1rem;
+    font-weight: 400;
+    color: hsl(215, 51%, 70%);
+}
+
+.price-info, .price, .days {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: .5rem 0;
+}
+
+.price {
+    gap: 7px;
+    color: hsl(178, 100%, 50%);
+    font-weight: 600;
+}
+
+.days {
+    gap: 5px;
+    color: hsl(215, 51%, 70%);
+    font-weight: 300;
+}
+
+.creator {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid hsl(215, 51%, 70%);
+    padding-top: 1rem;
+    gap: 10px;
+}
+
+.creator-img {
+    width: 2.5rem;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+
+.creator p {
+    color: hsl(215, 51%, 70%);
+}
+
+.creator p span {
+    color: hsl(0, 0%, 100%);
+}
+
+
+
