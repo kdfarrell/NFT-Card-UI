@@ -1,148 +1,166 @@
-/* Reset & Global Styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
 }
 
-img, svg {
-    display: block;
-    max-width: 100%;
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
+a, a:visited {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  border-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Basic rules */
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: "Outfit", serif;
-    background-color: hsl(230, 80%, 10%); /* Dark blue background */
-    height: 100vh;
+  background-color: hsl(217, 54%, 11%);
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  min-height: 100vh;
 }
 
-/* Product Card */
-.prod-card {
-    width: 300px;
-    background-color: hsl(230, 70%, 15%); /* Darker blue */
-    padding: 1.5rem;
-    border-radius: 1.5rem;
-    box-shadow: 0 0 20px rgba(0, 162, 255, 0.2);
+.container {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 40px 30px;
 }
 
-/* Product Image */
-.prod-img {
-    position: relative;
+.card {
+  background-color: hsl(216, 50%, 16%);
+  border-radius: 15px;
+  flex-basis: 340px;
+  padding: 20px;
 }
 
-.prod-img img {
-    border-radius: .5rem;
+.card-aside {
+  cursor: pointer;
+  display: flex;
+  position: relative;
 }
 
-/* Hover Overlay */
-.prod-img::after {
-    content: ""; 
-    position: absolute; 
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: hsla(200, 100%, 50%, 0.4); /* Neon blue glow */
-    border-radius: .5rem; 
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    cursor: pointer;
+.card-image{
+  border-radius: 7.5px;
 }
 
-.prod-img:hover::after {
-    opacity: 1;
+.card-image--mask {
+  align-items: center;
+  background-color: rgba(0, 255, 247, 0.438);
+  border-radius: 7.5px;
+  display: flex;
+  height: 0;
+  justify-content: center;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  transition: all .3s;
+  width: 100%;
 }
 
-/* SVG Icon */
-.prod-img svg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    fill: hsl(200, 100%, 60%);
-    
+.card-aside:hover .card-image--mask{
+  height: 100%;
+  opacity: 1;
+  transition: all .5s;
 }
 
-.prod-img:hover svg {
-    opacity: 1;
-    visibility: visible;
+.card-header {
+  margin-top: 20px;
 }
 
-/* Product Name */
-.prod-name {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin: 1rem 0;
-    color: hsl(220, 100%, 85%); /* Light blue */
-    transition: color 200ms linear;
+.card-title {
+  color: hsl(0, 0%, 100%);
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.3rem;
+  transition: all .3s;
 }
 
-.prod-name:hover {
-    color: hsl(200, 100%, 70%); /* Neon cyan */
-    cursor: pointer;
+.card-title:hover {
+  color: hsl(178, 100%, 50%);
+  transition: all .3s;
 }
 
-/* Product Description */
-.prod-desc {
-    margin-bottom: 1rem;
-    font-weight: 400;
-    color: hsl(220, 50%, 70%); /* Softer blue */
+.card-body {
+  border-bottom: 2px solid hsl(215, 32%, 27%);
+  margin-top: 15px;
+  padding-bottom: 10px;
 }
 
-/* Price & Time Info */
-.price-info, .price, .days {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: .5rem 0;
+.card-copy {
+  color: hsl(218.8,14.8%,54.9%);
+  font-size: 1.125rem;
 }
 
-.price {
-    gap: 7px;
-    color: hsl(200, 100%, 70%);
-    font-weight: 600;
-    text-shadow: 0 0 10px rgba(0, 162, 255, 0.6);
+.card-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 15px;
 }
 
-.days {
-    gap: 5px;
-    color: hsl(220, 50%, 70%);
-    font-weight: 300;
+.card-info-item {
+  align-items: center;
+  display: flex;
 }
 
-/* Creator Info */
-.creator {
-    display: flex;
-    align-items: center;
-    border-top: 1px solid hsl(220, 50%, 60%);
-    padding-top: 1rem;
-    gap: 10px;
+.card-info-item:first-child {
+  color: hsl(178, 100%, 50%);
 }
 
-.creator-img img {
-    width: 2.5rem;
-    height: 2.5rem;
-    border: 1px solid hsl(200, 100%, 60%);
-    border-radius: 100vh;
+.card-info-item:last-child {
+  color: hsl(218.8,14.8%,54.9%);
 }
 
-.creator p {
-    color: hsl(220, 50%, 70%);
+.card-icon {
+  margin-right: 7px;
 }
 
-.creator p span {
-    color: hsl(220, 100%, 85%);
-    transition: color 10s ease-in-out;
-    cursor: pointer;
+.card-footer {
+  align-items: center;
+  display: flex;
+  margin-top: 15px;
 }
 
-.creator p span:hover {
-    color: hsl(200, 100%, 70%);
-    text-shadow: 0 0 10px rgba(0, 162, 255, 0.8);
+.card-avatar {
+  border: 1px solid hsl(0, 0%, 100%);
+  border-radius: 50%;
+  margin-right: 15px;
+  width: 33px;
+}
+
+.card-author {
+  color: hsl(215, 51%, 70%)
+}
+
+.card-link {
+  color: hsl(0, 0%, 100%);
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.card-link:visited {
+  color: hsl(0, 0%, 100%);
+}
+
+.card-link:hover {
+  color: hsl(178, 100%, 50%);
+  transition: all .3s;
 }
