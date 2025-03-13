@@ -17,7 +17,7 @@ This project is a solution to the [NFT Preview Card Component Challenge](https:/
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/nft-preview-card.git
+   git clone https://github.com/kdfarrell/NFT-Card-UI.git
    ```
 2. Open `index.html` in a browser.
 3. Customize styles in `style.css` as needed.
